@@ -1,3 +1,4 @@
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 
@@ -20,19 +21,25 @@ public class App {
 
         Button b1 = new Button("BLACK", 100, 100);
 
-        b.setBackground(Color.BLACK);
+        b.setBackground(Color.WHITE);
 
-        
-        f.setBackground(Color.white);
+        f.setLayout(new BorderLayout());
+        f.setBackground(Color.WHITE);
         f.setSize(400, 400);
+        f.setResizable(false);
         f.setTitle("Theme Park");
         f.setIconImage(e.getImage());
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        p.setBackground(Color.BLACK);
 
-        p.setSize(new Dimension(b1.getWidth(), b1.getHeight()));
+
+        p.setBounds(100, 100, b1.getWidth(), b1.getHeight());
+
+        
+        
+        f.add(p, BorderLayout.EAST);
         p.add(b);
-        f.add(p);
         
 
         
